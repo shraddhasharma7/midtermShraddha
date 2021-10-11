@@ -217,9 +217,18 @@ class _HomePageState extends State<HomePage> {
                                         height: 50,
                                         imageUrl: usee_list[index]
                                             ['profile_pic']),
+                                    SizedBox(
+                                      width: 10.0,
+                                    ),
                                     Text(
                                       usee_list[index]['username'],
                                       //style: TextStyle(color: _colors[index]),
+                                    ),
+                                    SizedBox(
+                                      width: 10.0,
+                                    ),
+                                    Text(
+                                      usee_list[index]['date'].toString(),
                                     ),
                                     SizedBox(
                                       width: 5.0,
