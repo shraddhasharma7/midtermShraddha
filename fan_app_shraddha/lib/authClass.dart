@@ -78,8 +78,8 @@ class AuthClass {
   }
 
   //Anonymous
-  anonymousSignIn() async {
-    _auth.signInAnonymously();
+  Future<UserCredential> anonymousSignIn() async {
+    return _auth.signInAnonymously();
   }
 
   //phone number

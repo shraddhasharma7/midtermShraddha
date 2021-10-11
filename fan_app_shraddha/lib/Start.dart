@@ -32,14 +32,13 @@ class _StartState extends State<Start> {
   }
 
   anonymousSignIn() async {
-    authClassObj.anonymousSignIn();
-    Navigator.pushReplacementNamed(context, "/");
+    authClassObj.anonymousSignIn().then((UserCredential value) {
+      Navigator.pushReplacementNamed(context, "/");
+    });
   }
 
-  phoneNumberSignIn() {}
-
   String _verid = '';
-  Future<void> _displayPhoneTextInputDialog(BuildContext context) async {
+  Future<void> _phoneSignIn(BuildContext context) async {
     TextEditingController phone = TextEditingController();
     return showDialog(
         context: context,
@@ -195,7 +194,7 @@ class _StartState extends State<Start> {
             ),
             ElevatedButton(
                 onPressed: () async {
-                  _displayPhoneTextInputDialog(context);
+                  _phoneSignIn(context);
                 },
                 child: Text('Phone Number SignIn',
                     style: TextStyle(
